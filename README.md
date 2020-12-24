@@ -1,65 +1,35 @@
-# angular-test-runner README
+# Angular Test Runner
 
-This is the README for your extension "angular-test-runner". After writing up a brief description, we recommend including the following sections.
+This extension adds the ability to run and debug tests using the Angular CLI directly from test/spec files. There are options for setting the path to both the project and ng executable, see further instructions in the settings.
 
-## Features
+The extension will automatically activate when it detects an angular.json file in the workspace and will add codelenses to all files following this pattern `**/*.{spec,test}.{ts,js}`.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+# Configuration
 
-For example if there is an image subfolder under your extension project workspace:
+## Enable CodeLens
 
-\!\[feature X\]\(images/feature-x.png\)
+Enables/disables the CodeLens (inline commands in the test files)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+```json
+"angular-test-runner.enableCodeLens": true
+```
 
-## Requirements
+## Project Path
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+If your Angular project is not in the workspace root, please specify your absolute project path.
 
-## Extension Settings
+```json
+"angular-test-runner.debug.projectPath": "/absolute/path/to/project"
+```
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Angular CLI path
 
-For example:
+Specify Angular CLI executable path, defaults to `./node_modules/@angular/cli/bin/ng`
 
-This extension contributes the following settings:
+```json
+"angular-test-runner.debug.ngPath": "./node_modules/@angular/cli/bin/ng"
+```
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+# Issues
 
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+If you run into any [issues](https://github.com/janeriklysander/angular-test-runner/issues), please feel free to report them here: https://github.com/janeriklysander/angular-test-runner/issues
